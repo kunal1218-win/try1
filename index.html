@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Azmary</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- PAGE 0: PANDA INTRO -->
+<section class="page active" id="pandaPage">
+  <div class="panda">
+    <div class="ear left"></div>
+    <div class="ear right"></div>
+    <div class="face">
+      <div class="eye left"></div>
+      <div class="eye right"></div>
+      <div class="nose"></div>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 1: LYRICS PAGE -->
+<section class="page" id="lyricsPage">
+  <div class="lyrics-bg"></div>
+  <div class="lyrics-content">
+    <pre id="lyricsText"></pre>
+    <audio id="lyricsSong" src="audio/lyrics-song.mp3"></audio>
+  </div>
+</section>
+
+<!-- PAGE 2: IMAGES PAGE -->
+<section class="page" id="imagesPage">
+  <div class="image-slider" id="imageSlider"></div>
+  <button class="arrow left" id="prevImg">&lt;</button>
+  <button class="arrow right" id="nextImg">&gt;</button>
+</section>
+
+<!-- FULLSCREEN IMAGE VIEW -->
+<div id="fullScreenImg" class="fullscreen-img">
+  <img src="" alt="Full Image">
+  <button id="closeFull">✖</button>
+</div>
+
+<!-- PAGE 3: VIDEOS PAGE -->
+<section class="page" id="videosPage">
+  <h2>Moments in Motion 🎥</h2>
+  <div class="video-slider" id="videoSlider"></div>
+  <button id="videosNextBtn" disabled>Go Deeper ❤️</button>
+</section>
+
+<!-- PAGE 4: FINAL BIRTHDAY PAGE -->
+<section class="page" id="finalPage">
+  <div class="final-bg"></div>
+  <div class="final-content">
+    <h1>Happy Birthday Azmary 💖</h1>
+    <div id="finalText"></div>
+    <div class="blessing">
+      May Allah and God always protect your smile<br>
+      and fill your life with love and peace
+    </div>
+    <div class="signature">— From Kunal</div>
+  </div>
+  <audio id="bgSong" src="audio/background.mp3" loop></audio>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
