@@ -1,0 +1,69 @@
+/* GENERAL */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  overflow-x: hidden;
+  background: #000;
+  color: #fff;
+}
+
+.page {
+  display: none;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.page.active {
+  display: block;
+}
+
+/* PANDA PAGE */
+.panda {
+  width: 180px;
+  height: 180px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.face { width:180px; height:160px; background:white; border-radius:50%; position:relative; }
+.eye { width:30px; height:30px; background:black; border-radius:50%; position:absolute; top:50px; animation:blink 4s infinite; }
+.eye.left { left:40px; } .eye.right { right:40px; }
+.ear { width:60px; height:60px; background:black; border-radius:50%; position:absolute; top:-20px; }
+.ear.left { left:-20px; } .ear.right { right:-20px; }
+@keyframes blink { 0%,90%,100%{transform:scaleY(1);} 95%{transform:scaleY(0.1);} }
+
+/* LYRICS PAGE */
+.lyrics-bg { position:absolute; inset:0; background:radial-gradient(circle at top, #1a002a, #000); }
+.lyrics-content { position:relative; z-index:2; max-width:90%; margin:auto; top:20%; }
+#lyricsText { font-size:20px; line-height:1.7; white-space:pre-line; }
+
+/* IMAGE PAGE */
+.image-slider { display:flex; gap:30px; overflow:hidden; justify-content:center; align-items:center; height:80vh; position:relative; }
+.image-slide { min-width:70%; transition:transform 0.4s ease, opacity 0.4s ease; cursor:pointer; }
+.image-slide img { width:100%; border-radius:20px; }
+.arrow { position:absolute; top:50%; transform:translateY(-50%); background:rgba(0,0,0,0.5); border:none; color:white; font-size:36px; padding:10px; cursor:pointer; border-radius:50%; }
+.arrow.left { left:10px; } .arrow.right { right:10px; }
+
+/* FULLSCREEN IMAGE */
+.fullscreen-img { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.95); justify-content:center; align-items:center; z-index:1000; }
+.fullscreen-img img { max-width:90%; max-height:90%; }
+#closeFull { position:absolute; top:20px; right:20px; font-size:30px; background:none; border:none; color:white; cursor:pointer; }
+
+/* VIDEOS PAGE */
+.video-slider { display:flex; gap:30px; overflow-x:auto; scroll-snap-type:x mandatory; padding:100px 30px; width:100%; }
+.video-slider::-webkit-scrollbar { display:none; }
+.video-slide { scroll-snap-align:center; transition:transform 0.4s ease, opacity 0.4s ease; }
+.video-slide video { height:65vh; border-radius:20px; box-shadow:0 10px 40px rgba(0,0,0,0.6); cursor:pointer; }
+
+/* FINAL PAGE */
+.final-bg { position:absolute; inset:0; background:radial-gradient(circle at top, #1a002a, #000); animation:pulseBg 8s ease-in-out infinite; }
+@keyframes pulseBg { 0%{opacity:0.9;}50%{opacity:1;}100%{opacity:0.9;} }
+.final-content { position:relative; z-index:2; max-width:90%; text-align:center; top:15%; }
+.final-content h1 { font-size:36px; margin-bottom:30px; letter-spacing:1px; animation:fadeUp 2s ease forwards; }
+@keyframes fadeUp { from{opacity:0;transform:translateY(30px);} to{opacity:1;transform:translateY(0);} }
+#finalText { font-size:18px; line-height:1.7; margin-bottom:25px; white-space:pre-line; }
+.blessing { font-size:16px; opacity:0.9; margin-bottom:40px; }
+.signature { position:fixed; bottom:20px; right:25px; font-size:14px; opacity:0.7; font-style:italic; }
